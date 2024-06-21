@@ -163,9 +163,12 @@ cython_debug/
 
 #Unused files
 Mentoria 01 - Ciência de Dados.ipynb
+Deploy Projeto Airbnb.ipynb
+Gabarito Deploy Projeto Airbnb.py
 
 # Remove dataset files to large for github
 *.csv
 Modelos e Passo a Passo do Machine Learning.pptx
-Deploy Projeto Airbnb.ipynb
-Gabarito Deploy Projeto Airbnb.py
+
+# Remove joblib ml model file from github
+PredictingModel.joblib
