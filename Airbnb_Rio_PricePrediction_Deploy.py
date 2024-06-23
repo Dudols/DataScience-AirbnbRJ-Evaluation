@@ -14,5 +14,37 @@ x_lists = {'property_type': ['Apartment', 'Bed and breakfast', 'Condominium', 'G
             'cancelation_policy': ['flexible', 'moderate', 'strict']
             }
 
+aux_dict = {}
+for item in x_lists:
+    for value in x_lists[item]:
+        aux_dict[f'{item}_{value}'] = 0
 
-# PredictionModel = joblib.load('PredictingModel.joblib')
+for item in x_numeric:
+    if item == 'latitude' or item == 'longitude':
+        value = st.number_input(f'{item}', step=0.00001, value = 0.0, format='%.5f')
+    elif item == 'extra_people':
+        value = st.number_input(f'{item}', step=0.01, value = 0.0)
+    else:
+        value = st.number_input(f'{item}', step=1, value=0)
+    x_numeric[item] = value
+
+for item in x_tf:
+    value = st.selectbox(f'{item}', ('Yes', 'No'))
+    if value == 'Yes':
+        x_tf[item] = 1
+    else:
+        x_tf[item] = 0
+
+for item in x_lists:
+    value = st.selectbox(f'{item}', x_lists[item])
+    aux_dict[f'{item}_{value}'] = value
+
+predict = st.button('Predict Accomodation Price')
+
+if predict:
+    aux_dict.update(x_numeric)
+    aux_dict.update(x_tf)
+    x_values = pd.DataFrame(aux_dict, index=[0])
+    PredictionModel = joblib.load('PredictingModel.joblib')
+    price = PredictionModel.predict(x_values)
+    st.write(f'${price[0]}')
