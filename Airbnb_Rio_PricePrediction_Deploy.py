@@ -22,6 +22,7 @@ for item in x_lists:
 for item in x_numeric:
     if item == 'latitude' or item == 'longitude':
         value = st.number_input(f'{item}', step=0.00001, value = 0.0, format='%.3f')
+        st.write('Tip: check Google Maps for neighbourhood approximation on latitude and longitude')
     elif item == 'extra_people':
         value = st.number_input(f'{item}', step=0.01, value = 0.0)
     else:
