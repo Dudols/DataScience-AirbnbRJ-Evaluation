@@ -29,7 +29,7 @@
 
 - We have databases from April 2018 to May 2020, except for June 2018, which does not have a database
 
-## Referência
+## References
 
 -  The databases were taken from the Kaggle website: https://www.kaggle.com/allanbruno/airbnb-rio-de-janeiro
 
