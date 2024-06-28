@@ -23,8 +23,11 @@
 
  - The final solution is in the Python file "Airbnb_Rio_PricePrediction" without all analysis and with a cleaner code to understand the machine learning model features
 
+- The databases are the property prices obtained and their respective characteristics each month.
 
+- The prices are given in Brazilian reais (R$).
 
+- We have databases from April 2018 to May 2020, except for June 2018, which does not have a database
 
 ## Referência
 
